@@ -1,0 +1,95 @@
+html{background-color:black;
+margin: 0px;
+padding:0px}
+#all{
+    border: solid 4px white;
+    border-radius: 9px 0px 9px ;
+    width: fit-content;
+    padding: 21px 10px 21px x;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+strong{color:rgb(129, 226, 150);
+font-size: large;
+font-family: monospace;}
+h3{
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+input{text-align: center;
+    display: block;
+    margin: auto;}
+    #allbuttons{
+        margin: auto;
+        align-items: center; 
+    }
+button{
+    color:rgb(252, 253, 252);
+    background-color: rgb(44, 219, 9);
+    border-radius: 9px 0px 9px 0px;
+    padding: 5px;
+font-weight: 600;
+font-family:Roboto;
+}
+    #clear{background-color:rgb(117, 3, 3);
+    color:white;
+font-family: Verdana, Geneva, Tahoma, sans-serif;}
+
+@media screen and (max-width: 480px)
+{/*******************design for phone**************/
+
+    #all{
+        border: solid 4px white;
+        border-radius: 20px 5px 20px 5px;
+        width: fit-content;
+        padding: 13px;
+        text-align: center;
+        margin-top: 4rem;
+        padding-top: 9rem;
+        height: 31rem;
+        display: block;
+        margin: auto;
+    }
+    strong{color:rgb(129, 226, 150);
+    font-size: 23px;
+    font-family: monospace}
+    h3{
+        text-align: center;
+        display: block;
+        margin: auto;
+    }
+    input{text-align: center;
+        display: block;
+        font-family:monospace;
+        font-weight: 300;
+        font-size: x-large;
+
+        padding:34px;
+        width: 12px;
+        margin: auto;}
+        #allbuttons{
+            margin: auto;
+            align-items: center; 
+        }
+    button{
+        color:rgb(252, 253, 252);
+        background-color: rgb(44, 219, 9);
+        border-radius: 9px 0px 9px 0px;
+    font-weight: 600;
+    font-family:Roboto;
+    }
+        #clear{background-color:rgb(117, 3, 3);
+        color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;}
+    
+}
+
+@media screen and (min-width: 760px) {
+    /*design for ipad*/
+}
+@media screen and (min-width:1024px){
+    /*destop screen*/
+}
+    

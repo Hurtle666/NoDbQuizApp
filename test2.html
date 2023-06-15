@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test-Two</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>   
+
+    <div id="all">
+    <div id="quiz" style="color:white;font-family: 'Courier New', Courier, monospace;">
+        <h1>Start The Quiz</h1></div>
+    <div  id="allbuttons">
+<button id="name">Input-Name</button>
+<button id="submit">Submit</button>
+<button id="start">START</button>
+<button id="retake">Retake</button>
+<button id="clear">Exit</button>
+</div>
+</div>
+    <script>
+    let name;
+    function showName(){
+        name = prompt("input name");
+    if(name ==''){name.value = 'dd'}}
+    //PUT ALL QUESTION IN AN ARREY OBJECT
+const quiz = [{
+    question:"who Created AK47",answers:{a:"Russle-kalasnikov",b:"Mikhail-Kalashnikov",c:"vladmir-Kalashnikov"},correctAns:"b"},
+{question:"What country is Taking Top Lead In Tech",answers:{a:"Germany",b:"japan",c:"U-S-A"},correctAns:"b"},
+{question:"what year was AK47 Invented",answers:{a:"1947",b:"1846",c:"1957"},correctAns:"a"},
+{question:"Full-meaning of SQL",answers:{a:"Structure Query link",b:"Structured Query Language",c:"Structured Query Language"},correctAns:"c"}
+];
+   
+let score = 0;
+let currentQuestion = 0 ;
+const quizContainer = document.getElementById("quiz");
+function showQuestion(){
+const questionDiv = document.createElement("div");
+questionDiv.innerHTML = `<h3> Question ${[currentQuestion]} out Of ${quiz.length}: <br><strong>${quiz[currentQuestion].question}</strong></h3>`;
+quizContainer.appendChild(questionDiv);
+
+const answerDiv = document.createElement("div");
+//write a loop to loop over the labels and answer
+for(answer in quiz[currentQuestion].answers){
+const labelDiv = document.createElement("label");
+labelDiv.innerHTML = `<br><h3><input type="radio" name="question${currentQuestion}" value="${answer}"></h3>
+${quiz[currentQuestion].answers[answer]}`;
+answerDiv.appendChild(labelDiv);
+}
+quizContainer.appendChild(answerDiv);
+};
+  
+  //............................VALIDATING THE BUTTON FAMILY...............................\
+
+  const star = document.getElementById("start");
+star.addEventListener("click",function(){
+    
+    showQuestion();
+    document.getElementById("start").disabled = true;
+})
+ 
+  const submitButton = document.getElementById("submit");
+  submitButton.addEventListener("click",function (){
+const userAnswer = document.querySelector(`input[name="question${currentQuestion}"]:checked`).value;
+if (userAnswer === quiz[currentQuestion].correctAns){score ++};
+quizContainer.innerHTML = "";
+currentQuestion ++;
+  
+if (currentQuestion < quiz.length){
+    showQuestion();
+}else
+  {
+    const resultDiv = document.createElement("div");
+resultDiv.innerHTML = `<h2> CONGRATULATION 🎉🎈🎉you got ${score} out of ${quiz.length}</h2>`;
+quizContainer.appendChild(resultDiv);
+}
+  });
+  const ret =  document.getElementById("retake");
+  ret.addEventListener("click",function(){
+    window.location.reload();
+  });
+  const clear =  document.getElementById("clear");
+  clear.addEventListener("click",function(){
+     quizContainer.innerHTML = "<h2>" + name +",You're a Rotten Comrade,Go do some research🤣😂❌.</h2>"; 
+     document.getElementById("start").disabled = true;
+  });
+const nam = document.getElementById('name');
+nam.addEventListener("click",function(){
+showName();
+});
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
